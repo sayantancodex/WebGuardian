@@ -4,26 +4,22 @@ from bs4 import BeautifulSoup
 import colorama
 
 def subdir():
-
+    global total_urls_visited
     # init the colorama module
     colorama.init()
     GREEN = colorama.Fore.GREEN
     GRAY = colorama.Fore.LIGHTBLACK_EX
     RESET = colorama.Fore.RESET
     YELLOW = colorama.Fore.YELLOW
-
     # initialize the set of links (unique links)
     internal_urls = set()
     external_urls = set()
-
-
     def is_valid(url):
         """
         Checks whether `url` is a valid URL.
         """
         parsed = urlparse(url)
         return bool(parsed.netloc) and bool(parsed.scheme)
-
     def get_all_website_links(url):
         il = open("/internallink.txt", "+w")
         el = open("/externallink.txt", "+w")
@@ -36,7 +32,7 @@ def subdir():
         domain_name = urlparse(url).netloc
         soup = BeautifulSoup(requests.get(url).content, "html.parser")
         il = open("internallink.txt", "+a")
-        el = open("externallink.txt", "+a")
+        el = open("externallink.txt", '+a')
         for a_tag in soup.findAll("a"):
             href = a_tag.attrs.get("href")
             if href == "" or href is None:
@@ -68,12 +64,9 @@ def subdir():
         il.close()
         el.close()    
         return urls
-
     # number of urls visited so far will be stored here
     total_urls_visited = 0
     max_urls = 0
-
-
     def crawl(url, max_urls=30):
         """
         Crawls a web page and extracts all links.
@@ -89,10 +82,10 @@ def subdir():
             if total_urls_visited > max_urls:
                 break
             crawl(link, max_urls=max_urls)
-
     if __name__ == "__main__":
-        crawl("http://testphp.vulnweb.com/")
+        crawl("http://testhtml5.vulnweb.com/")
         print("[+] Total Internal links:", len(internal_urls))
         print("[+] Total External links:", len(external_urls))
         print("[+] Total URLs:", len(external_urls) + len(internal_urls))
         print("[+] Total crawled URLs:", total_urls_visited)
+subdir()

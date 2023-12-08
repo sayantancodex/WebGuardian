@@ -66,5 +66,5 @@ def headerchecker(link):
 
 
 
-link = "http://testphp.vulnweb.com"
+link = "http://testhtml5.vulnweb.com"
 headerchecker(link)

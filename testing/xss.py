@@ -2,8 +2,18 @@ import requests
 from pprint import pprint
 from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin
+import colorama
 
 def xss():
+    colorama.init()
+    RED = colorama.Fore.RED
+    GREEN = colorama.Fore.GREEN
+    RESET = colorama.Fore.RESET
+    # requests = RequestsTor()
+    # requests = RequestsTor(tor_ports=(9050,), tor_cport=9051)
+
+
+
     def get_all_forms(url):
         """Given a `url`, it returns all forms from the HTML content"""
         soup = bs(requests.get(url).content, "html.parser")
@@ -80,7 +90,7 @@ def xss():
                 form_details = get_form_details(form)
                 content = submit_form(form_details, url, js_script).content.decode()
                 if js_script in content:
-                    print(f"[+] XSS Detected on {url}")
+                    print(f"{GREEN}[+] XSS Detected on {url}{RESET}")
                     print(f"[*] Form details:")
                     pprint(form_details)
                     is_vulnerable = True
@@ -89,5 +99,7 @@ def xss():
         except:
             print("No xss found")
     if __name__ == "__main__":
-        url = "http://testphp.vulnweb.com/"
+        url = "http://testhtml5.vulnweb.com/"
         print(scan_xss(url))
+
+xss()
