@@ -83,7 +83,7 @@ def subdir():
                 break
             crawl(link, max_urls=max_urls)
     if __name__ == "__main__":
-        crawl("http://testhtml5.vulnweb.com/")
+        crawl("http://testphp.vulnweb.com/")
         print("[+] Total Internal links:", len(internal_urls))
         print("[+] Total External links:", len(external_urls))
         print("[+] Total URLs:", len(external_urls) + len(internal_urls))
