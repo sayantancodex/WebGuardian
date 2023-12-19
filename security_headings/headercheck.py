@@ -2,14 +2,14 @@ import requests
 import colorama
 import time
 
-def headerchecker(link):
+def headerchecker(universal_link):
     colorama.init()
     RED = colorama.Fore.RED
     GREEN = colorama.Fore.GREEN
     RESET = colorama.Fore.RESET
     YELLOW = colorama.Fore.YELLOW
     try:
-        r = requests.get(link).headers
+        r = requests.get(universal_link).headers
         vuln = list(r)
         
         try:
@@ -66,5 +66,5 @@ def headerchecker(link):
 
 
 
-link = "https://soa.ac.in/iter"
-headerchecker(link)
+# link = "https://hack-yourself-first.com"
+# headerchecker(link)

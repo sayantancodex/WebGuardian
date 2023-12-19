@@ -99,7 +99,7 @@ def xss():
         except:
             print("No xss found")
     if __name__ == "__main__":
-        url = "http://testhtml5.vulnweb.com/"
+        url = "https://hack-yourself-first.com"
         print(scan_xss(url))
 
 xss()
