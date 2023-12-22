@@ -7,3 +7,4 @@ universal link variable --> universal_link
 4. adminpanel
 5. xss
 6. sqli
+7. hmm
