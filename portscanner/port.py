@@ -5,9 +5,6 @@ from datetime import datetime
 from ftplib import FTP
 
 
-ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
-print(ascii_banner)
-
 # Defining a target
 def portscan(universal_link):
 	if "https://" in universal_link:

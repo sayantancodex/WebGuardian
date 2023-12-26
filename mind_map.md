@@ -6,4 +6,4 @@ universal link variable --> universal_link
 3. ftp
 4. adminpanel
 5. xss
-6. sqli
+6. sqli -> sqlilink

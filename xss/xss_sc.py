@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin
 import colorama
 
-def xss():
+def xss_scan(universal_link):
     colorama.init()
     RED = colorama.Fore.RED
     GREEN = colorama.Fore.GREEN
@@ -98,8 +98,7 @@ def xss():
             return is_vulnerable
         except:
             print("No xss found")
-    if __name__ == "__main__":
-        url = "https://hack-yourself-first.com"
-        print(scan_xss(url))
+    
+    url = universal_link
+    print(scan_xss(url))
 
-xss()
