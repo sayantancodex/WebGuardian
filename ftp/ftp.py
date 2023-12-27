@@ -4,8 +4,19 @@ import socket
 def ftpscan(universal_link):
 	if "https://" in universal_link:
 		universal_link = universal_link.replace("https://","")
-	elif "http" in universal_link:
+	elif "http://" in universal_link:
 		universal_link = universal_link.replace("http://","")
+	if '/' in universal_link:
+		universal_link = universal_link.replace('/','')
+	target = socket.gethostbyname(universal_link)
+
+	if '?' in universal_link:
+		universal_link = universal_link.replace('?','')
+	target = socket.gethostbyname(universal_link)
+
+	if '=' in universal_link:
+		universal_link = universal_link.replace('=','')
+	target = socket.gethostbyname(universal_link) 
 	print("Testing FTP")
 	target = socket.gethostbyname(universal_link)
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

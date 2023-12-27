@@ -37,7 +37,10 @@ result = pyfiglet.figlet_format("WebGuardian")
 print(result)
 print("Scanning Vulnerabilities One at a time\n\n")
 # print()
-universal_link = "https://ftp.dlptest.com"
+universal_link = input("Enter URL: ")
+if universal_link[-1] == '/':
+    universal_link = universal_link[0:len(universal_link)-1]
+    print(universal_link)
 print(f"\n{GREEN}[*]CHECKING WEBSITE SECURITY HEADERS{RESET}\n")
 headercheck.headerchecker(universal_link)
 print(f"\n{GREEN}[*]CHECKING OPEN PORTS{RESET}\n")

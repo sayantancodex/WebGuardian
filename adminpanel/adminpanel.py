@@ -142,4 +142,13 @@ def adminpanelscanner(universal_link):
     for i in range(len(paths)):
         r = requests.get(f'{link}/{paths[i]}')
         if (r.status_code == 200):
-            print(f"{link}/{paths[i]}")
+            # print(f"{link}/{paths[i]}")
+            if '404' in r.text:
+                pass
+            else:
+                print(f"{link}/{paths[i]}")
+        else:
+           print('*',end='')
+
+# universal_link = "https://google.com"
+# adminpanelscanner(universal_link)

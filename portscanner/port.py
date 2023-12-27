@@ -9,8 +9,18 @@ from ftplib import FTP
 def portscan(universal_link):
 	if "https://" in universal_link:
 		universal_link = universal_link.replace("https://","")
-	elif "http" in universal_link:
+	elif "http://" in universal_link:
 		universal_link = universal_link.replace("http://","")
+	if '/' in universal_link:
+		universal_link = universal_link.replace('/','')
+	target = socket.gethostbyname(universal_link)
+
+	if '?' in universal_link:
+		universal_link = universal_link.replace('?','')
+	target = socket.gethostbyname(universal_link)
+
+	if '=' in universal_link:
+		universal_link = universal_link.replace('=','')
 	target = socket.gethostbyname(universal_link) 
 	# if len(sys.argv) == 2:
 		
@@ -80,5 +90,5 @@ def portscan(universal_link):
 			print("\n Server not responding !!!!")
 			# sys.exit()
 
-# universal_link = 'ftp.pureftpd.org'
+# universal_link = 'https://medium.com/'
 # portscan(universal_link)
