@@ -12,7 +12,7 @@ RED = colorama.Fore.RED
 GREEN = colorama.Fore.GREEN
 BLUE = colorama.Fore.BLUE
 RESET = colorama.Fore.RESET
-YELLOW = colorama.Fore.YELLOW
+YELLOW = colorama.Fore.MAGENTA
 
 print('''                                                                                    
               .-=*#%%%%+..:---.                                
@@ -43,7 +43,8 @@ print(RESET)
 
 result = pyfiglet.figlet_format("WebGuardian")
 print(f"{result}")
-print(f"{GREEN}Scanning Vulnerabilities One at a time\n\n{RESET}")
+print(f"{GREEN}Scanning Vulnerabilities One at a time{RESET}")
+print(f"{YELLOW}BROUGHT TO YOU BY 📷 @the_eager_wolverine\n\n{RESET}")
 # print()
 universal_link = input("Enter URL: ")
 if universal_link[-1] == '/':
