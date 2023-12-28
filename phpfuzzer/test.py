@@ -1,14 +1,19 @@
 from bs4 import BeautifulSoup
 import requests
 
-html = requests.get('http://testphp.vulnweb.com/artists.php')
-soup = BeautifulSoup(html.content, 'lxml')
+def phpfuzzer(universal_link):
 
-links = soup.find_all('a')
+    html = requests.get(universal_link)
+    soup = BeautifulSoup(html.content, 'lxml')
 
-for link in links:
-    href = link.get('href')
-    if 'php?' in href:
-        print(href)
+    links = soup.find_all('a')
 
-print(html.text)
+    for link in links:
+        href = link.get('href')
+        if 'php?' in href:
+            phpfuzz = universal_link+href
+            print(phpfuzz)
+
+# print(html.text)
+universal_link = "http://testphp.vulnweb.com/artists.php"
+phpfuzzer(universal_link)
