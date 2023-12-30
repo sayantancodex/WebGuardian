@@ -35,7 +35,7 @@ WEBGUARDIAN is a cybersecurity tool designed to assess the security posture of w
 ### Clone the Repository
 
 ```bash
-https://github.com/sayantancodex/WebGuardian.git
+git clone https://github.com/sayantancodex/WebGuardian.git
 cd WebGuardian
 ```
 
