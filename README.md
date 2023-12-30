@@ -53,7 +53,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
-[Provide detailed instructions on how to use your tool, including examples and command-line options.]
 
 ## Contributing
 
