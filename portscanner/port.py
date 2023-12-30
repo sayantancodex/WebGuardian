@@ -32,7 +32,6 @@ def portscan(universal_link):
 	# Add Banner 
 	print("-" * 50)
 	print("Scanning Target: " + target)
-	print("Scanning started at:" + str(datetime.now()))
 	print("-" * 50)
 	#aserver_ports = [20,21,22,23,25,53,80,110,119,123,143,161,194,443]
 	server_ports = {
