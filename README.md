@@ -9,6 +9,7 @@ WEBGUARDIAN is a cybersecurity tool designed to assess the security posture of w
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [License](#license)
 
 
 ## Features
@@ -56,7 +57,7 @@ python main.py
 
 ## Contributing
 
-Contributions are welcome! If you find a bug, have a feature request, or want to contribute in any other way, please open an issue or submit a pull request. Make sure to follow the [contribution guidelines](CONTRIBUTING.md).
+Contributions are welcome! If you find a bug, have a feature request, or want to contribute in any other way, please open an issue or submit a pull request..
 
 ## License
 
