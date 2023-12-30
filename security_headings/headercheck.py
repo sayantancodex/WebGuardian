@@ -63,8 +63,3 @@ def headerchecker(universal_link):
             print(f"{YELLOW}[*] Likely Vulnerable and outdated Site{RESET}")
     except Exception as e:
         print(e)
-
-
-
-# link = "https://hack-yourself-first.com"
-# headerchecker(link)

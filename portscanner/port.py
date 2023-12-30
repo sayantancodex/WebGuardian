@@ -69,8 +69,7 @@ def portscan(universal_link):
 		for port in range(len(a)):
 			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			socket.setdefaulttimeout(1)
-			
-			# returns an error indicator
+
 			result = s.connect_ex((target,a[port]))
 			# print(result)
 			if result == 0:
@@ -90,5 +89,3 @@ def portscan(universal_link):
 			print("\n Server not responding !!!!")
 			# sys.exit()
 
-# universal_link = 'https://medium.com/'
-# portscan(universal_link)

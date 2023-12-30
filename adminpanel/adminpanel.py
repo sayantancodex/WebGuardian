@@ -147,8 +147,7 @@ def adminpanelscanner(universal_link):
                 pass
             else:
                 print(f"{link}/{paths[i]}")
-        else:
-           print('*',end='')
+        
 
 # universal_link = "https://google.com"
 # adminpanelscanner(universal_link)

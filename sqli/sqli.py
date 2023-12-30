@@ -2,9 +2,16 @@ import requests
 from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin
 from pprint import pprint
+import colorama
 
 # initialize an HTTP session & set the browser
 def sqliscanner(sqlilink):
+    colorama.init()
+    RED = colorama.Fore.RED
+    GREEN = colorama.Fore.GREEN
+    BLUE = colorama.Fore.BLUE
+    RESET = colorama.Fore.RESET
+    YELLOW = colorama.Fore.MAGENTA 
     s = requests.Session()
     s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"
 
@@ -98,7 +105,7 @@ def sqliscanner(sqlilink):
                     res = s.get(url, params=data)
                 # test whether the resulting page is vulnerable
                 if is_vulnerable(res):
-                    print("[+] SQL Injection vulnerability detected, link:", url)
+                    print(f"{GREEN}[+] SQL Injection vulnerability detected, link: {url}{RESET}")
                     print("[+] Form:")
                     pprint(form_details)
                     break

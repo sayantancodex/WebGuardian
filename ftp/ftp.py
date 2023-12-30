@@ -30,8 +30,9 @@ def ftpscan(universal_link):
 				print("Anonymous Login Available")
 			else:
 				pass
-		except:
-			print("Exception occured")
+		except Exception as e:
+			
+			print("FTP IS SECURE")
 	else:
 		print("FTP port did not respond or is not active")
 
