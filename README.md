@@ -45,7 +45,6 @@ cd WebGuardian
 pip install -r requirements.txt
 ```
 
-[Include any additional setup steps or configuration here]
 
 ## Usage
 
