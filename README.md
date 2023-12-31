@@ -20,6 +20,8 @@ WEBGUARDIAN is a cybersecurity tool designed to assess the security posture of w
 
 - **Vulnerable FTP Access:** Test for FTP vulnerabilities that could compromise the security of the website.
 
+- **Fetching Disallowed Paths:** Fetching disallowed paths from /robots.txt.
+
 - **Admin Panel Detection:** Discover hidden admin panels that may be susceptible to unauthorized access.
 
 - **XSS (Cross-Site Scripting) Testing:** Assess the website for potential XSS vulnerabilities, a common attack vector.
