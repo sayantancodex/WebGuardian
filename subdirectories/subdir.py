@@ -3,7 +3,7 @@ from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 import colorama
 
-def subdir():
+def subdir(universal_link):
     global total_urls_visited
     # init the colorama module
     colorama.init()
@@ -64,16 +64,9 @@ def subdir():
         il.close()
         el.close()    
         return urls
-    # number of urls visited so far will be stored here
     total_urls_visited = 0
     max_urls = 0
     def crawl(url, max_urls=30):
-        """
-        Crawls a web page and extracts all links.
-        You'll find all links in `external_urls` and `internal_urls` global set variables.
-        params:
-            max_urls (int): number of max urls to crawl, default is 30.
-        """
         global total_urls_visited
         total_urls_visited += 1
         print(f"{YELLOW}[*] Crawling: {url}{RESET}")
@@ -88,4 +81,3 @@ def subdir():
         print("[+] Total External links:", len(external_urls))
         print("[+] Total URLs:", len(external_urls) + len(internal_urls))
         print("[+] Total crawled URLs:", total_urls_visited)
-subdir()
